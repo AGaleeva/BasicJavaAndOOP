@@ -1,6 +1,6 @@
-package homeWork16;
+package lesson16.homeWork;
 
-import practicum.MyDate;
+import lesson16.MyDate;
 
 public class Patient {
 

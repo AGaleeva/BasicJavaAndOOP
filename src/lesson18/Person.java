@@ -1,4 +1,4 @@
-package practicum;
+package lesson18;
 
 public class Person {
     private String name;

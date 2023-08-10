@@ -1,4 +1,4 @@
-package practicum.constructor;
+package lesson17.constructor;
 
 public class Main {
 

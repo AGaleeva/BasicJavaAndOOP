@@ -1,4 +1,4 @@
-package practicum;
+package lesson18;
 
 public class MainPerson {
     public static void main(String[] args) {

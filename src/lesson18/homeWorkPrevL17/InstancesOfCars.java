@@ -1,4 +1,4 @@
-package homeWorkPrevFromLes17;
+package lesson18.homeWorkPrevL17;
 
 public class InstancesOfCars {
 

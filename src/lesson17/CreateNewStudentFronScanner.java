@@ -1,4 +1,4 @@
-package practicum;
+package lesson17;
 
 import java.util.Scanner;
 

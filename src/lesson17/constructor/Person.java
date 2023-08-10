@@ -1,6 +1,4 @@
-package practicum.constructor;
-
-import practicum.constructor.MyDateConstructor;
+package lesson17.constructor;
 
 public class Person {
 

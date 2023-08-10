@@ -1,8 +1,9 @@
-package homeWork16;
+package lesson16.homeWork;
 
-import practicum.MyDate;
+import lesson16.MyDate;
 
-import static practicum.MethodDateToString.dateToStringWithObject;
+import static lesson16.MethodDateToString.dateToStringWithObject;
+
 public class MethodStudentToString {
 
     public static void main(String[] args) {

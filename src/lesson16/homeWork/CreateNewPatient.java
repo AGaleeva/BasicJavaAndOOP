@@ -1,15 +1,16 @@
-package homeWork16;
+package lesson16.homeWork;
 
-import practicum.MyDate;
 
-import static practicum.MethodDateToString.dateToStringWithObject;
+import lesson16.MyDate;
+
+import static lesson16.MethodDateToString.dateToStringWithObject;
 
 public class CreateNewPatient {
     public static void main(String[] args) {
 
         Patient patient1 = new Patient();
-        MyDate birthdate1 = new MyDate();
-        MyDate dateOfAdmission1 = new MyDate();
+        MyDate birthdate1 = new lesson16.MyDate();
+        MyDate dateOfAdmission1 = new lesson16.MyDate();
 
         birthdate1.day = 21;
         birthdate1.month = 11;

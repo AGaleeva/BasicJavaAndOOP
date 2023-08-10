@@ -1,7 +1,7 @@
-package practicum;
+package lesson16;
 
 
-import static practicum.MethodDateToString.dateToStringWithObject;
+import static lesson16.MethodDateToString.dateToStringWithObject;
 
 public class CreateNewCat {
 

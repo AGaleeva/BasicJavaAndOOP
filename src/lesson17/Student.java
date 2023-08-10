@@ -1,4 +1,4 @@
-package practicum;
+package lesson17;
 
 public class Student {
 
