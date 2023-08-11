@@ -37,4 +37,11 @@ public class Group {
 
         return res;
     }
+    public Student[] getGroupAsArray(){
+        Student[] tempArray = new Student[arr.length];
+        for (int i=0; i<arr.length;i++){
+            tempArray[i]=arr[i];
+        }
+        return tempArray;
+    }
 }

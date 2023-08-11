@@ -9,27 +9,27 @@ public class CompareTwoDates {
 
     public static void main(String[] args) {
 
-        System.out.println(dateCompare(1,1,2023, 1,1,2024)); // 1
-        System.out.println(dateCompare(1,1,2023, 1,2,2023)); // 1
-        System.out.println(dateCompare(1,1,2023, 10,11,2022)); // -1
-        System.out.println(dateCompare(2,12,2023, 2,11,2023)); // -1
+        System.out.println(dateCompare(1, 1, 2023, 1, 1, 2024)); // 1
+        System.out.println(dateCompare(1, 1, 2023, 1, 2, 2023)); // 1
+        System.out.println(dateCompare(1, 1, 2023, 10, 11, 2022)); // -1
+        System.out.println(dateCompare(2, 12, 2023, 2, 11, 2023)); // -1
 
     }
 
-    public static int dateCompare(int day1, int month1, int year1, int day2, int month2, int year2){
-        if (year1<year2) {
+    public static int dateCompare(int day1, int month1, int year1, int day2, int month2, int year2) {
+        if (year1 < year2) {
             return 1;
-        } else if (year2<year1){
-            return  -1;
+        } else if (year2 < year1) {
+            return -1;
         } else {
-            if (month1<month2){
+            if (month1 < month2) {
                 return 1;
-            } else if (month2<month1){
+            } else if (month2 < month1) {
                 return -1;
             } else {
-                if (day1<day2) {
+                if (day1 < day2) {
                     return 1;
-                } else if (day2<day1){
+                } else if (day2 < day1) {
                     return -1;
                 } else {
                     return 0;
@@ -40,12 +40,12 @@ public class CompareTwoDates {
     }
 
 
-    public static int dateCompare2(int day1, int month1, int year1, int day2, int month2, int year2){
-        int date1= year1*10000 + month1*100 + day1;    //01.10.2020   == 2020*10000 + 1*100 + 1
-        int date2= year2*10000 + month2*100 + day2;    //01.12.2021    == 2021*10000 + 12*100+1
-        if (date1==date2) {
+    public static int dateCompare2(int day1, int month1, int year1, int day2, int month2, int year2) {
+        int date1 = year1 * 10000 + month1 * 100 + day1;    //01.10.2020   == 2020*10000 + 1*100 + 1
+        int date2 = year2 * 10000 + month2 * 100 + day2;    //01.12.2021    == 2021*10000 + 12*100+1
+        if (date1 == date2) {
             return 0;
         }
-        return (date1<date2)?1:-1;
+        return (date1 < date2) ? 1 : -1;
     }
 }
