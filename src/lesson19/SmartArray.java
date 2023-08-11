@@ -3,7 +3,6 @@ package lesson19;
 import java.util.Arrays;
 
 public class SmartArray {
-
     private int size = 0;
     private int[] arr = new int[4];
 
@@ -35,6 +34,17 @@ public class SmartArray {
         return tempArray;
     }
 
+    public int getSize() {
+        return size;
+    }
+
+    public double gameArrAvg() {
+        double avg = 0;
+        for (double val : arr) {
+            avg += val / (size - 1);
+        }
+        return avg;
+    }
     public String toString() {
         String res = "[";
         for (int i = 0; i < size; i++) {
