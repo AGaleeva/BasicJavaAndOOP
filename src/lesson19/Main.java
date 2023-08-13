@@ -42,7 +42,7 @@ public class Main {
 
         student6.addRates(3);
         student6.addRates(4);
-        student6.addRates(3);
+        student6.addRates(2);
         System.out.println(student6 + "\n");
 
         System.out.println("===========================================\n");
@@ -58,6 +58,8 @@ public class Main {
         gr1.addStudent(student6);
 
         System.out.println(gr1);
+
+        System.out.println();
 
        /*
         SmartArray array = new SmartArray();

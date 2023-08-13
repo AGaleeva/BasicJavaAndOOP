@@ -7,7 +7,6 @@ public class Group {
 
     public Group(String name) {
         this.name = name;
-        arr = new Student[4];
     }
 
     private int size = 0;
