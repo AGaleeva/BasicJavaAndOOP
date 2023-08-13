@@ -20,10 +20,14 @@ public class Main {
         cart1.addArticle(voelklRT165);
         cart1.addArticle(voelklRT175);
         cart1.addArticle(voelklAM168);
+        cart1.addArticle(voelklAM161);
+        cart1.addArticle(voelklRT180);
 
-        System.out.println(cart1.cartToPrint());
+        System.out.println(cart1);
+        System.out.println();
 
         cart1.removeArticle(voelklRT165);
+        System.out.println(cart1);
 
         Order order1 = new Order();
 

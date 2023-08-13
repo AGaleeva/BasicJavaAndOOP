@@ -30,19 +30,16 @@ public class Cart {
             }
         }
         Article[] result = new Article[arr.length - 1];
-        int count = 0;
         for (int i = 0; i < index; i++) {
             result[i] = arr[i];
-            count++;
         }
-        for (int i = index; i < arr.length - 1; i++) {
-            result[i] = arr[i + 1];
-            count++;
+        for (int j = index + 1; j <= arr.length - 1; j++) {
+            result[j - 1] = arr[j];
         }
-        for (int i = 0; i < count - 1; i++) {
-            arr[i] = result[i];
+        size--;
+        for (int k = 0; k < size; k++) {
+            arr[k] = result[k];
         }
-        size = count - 1;
     }
 
     public double countPrice() {
