@@ -9,7 +9,7 @@ public class Order {
     }
 
     public void orderSumToPrint(Cart cart) {
-        System.out.println("The total amount of your order is " + cart.countPrice());
+        System.out.println("The total amount of your order is " + cart.countPrice() + " Eur.");
     }
     public static void main(String[] args) {
 
