@@ -29,17 +29,21 @@ public class Cart {
                 index = i;
             }
         }
-        Article[] result = new Article[arr.length - 1];
-        for (int i = 0; i < index; i++) {
-            result[i] = arr[i];
-        }
-        for (int j = index + 1; j <= arr.length - 1; j++) {
-            result[j - 1] = arr[j];
+        for (int j = index + 1; j < size; j++) {
+            arr[j - 1] = arr [j];
         }
         size--;
-        for (int k = 0; k < size; k++) {
-            arr[k] = result[k];
-        }
+//        Article[] result = new Article[arr.length - 1];
+//        for (int i = 0; i < index; i++) {
+//            result[i] = arr[i];
+//        }
+//        for (int j = index + 1; j <= arr.length - 1; j++) {
+//            result[j - 1] = arr[j];
+//        }
+//        size--;
+//        for (int k = 0; k < size; k++) {
+//            arr[k] = result[k];
+//        }
     }
 
     public double countPrice() {
