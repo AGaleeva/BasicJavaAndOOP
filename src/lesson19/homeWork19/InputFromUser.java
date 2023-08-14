@@ -6,6 +6,14 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class InputFromUser {
+    /*
+    Используя класс SmartArray реализуйте следующую программу: пользователь с клавиатуры вводит целые числа.
+    Как только пользователь вводит 0, программа выдает следующее:
+    You have input the following numbers: …введенные_значения…..
+    Total …колмчество_чисел… numbers
+    Average value: …среднее…
+    */
+
     public static void main(String[] args) {
 
         int number = 1;
