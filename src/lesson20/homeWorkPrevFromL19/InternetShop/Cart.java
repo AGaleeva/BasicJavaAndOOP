@@ -45,19 +45,17 @@ public class Cart {
     }
 
     public void remove(int index) {
-        if (index > 0 && index < size) {
+        if (index >= 0 && index < size) {
             for (int i = index + 1; i < size; i++) {
                 arr[i - 1] = arr[i];
             }
             size--;
         }
     }
-
     public void removeById(int id) {
         int index = getIndexById(id);
         remove(index);
     }
-
     public int getIndexById(int id) {
         int res = -1;
         for (int i = 0; i < size; i++) {
