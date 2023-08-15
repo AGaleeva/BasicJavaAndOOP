@@ -1,4 +1,4 @@
-package lesson21.BinarySearchInAndSortArray;
+package lesson21.BinarySearchAndSortingArray;
 
 public class Main {
 
