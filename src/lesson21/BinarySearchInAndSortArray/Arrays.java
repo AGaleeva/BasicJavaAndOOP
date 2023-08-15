@@ -1,4 +1,4 @@
-package lesson21.conceptForTheInterviewBinarySearchInArray;
+package lesson21.BinarySearchInAndSortArray;
 
 public class Arrays {
 
@@ -11,7 +11,7 @@ public class Arrays {
         return -1;
     }
 
-    public static int binarySearch(int[] array, int value) { // array is the SORTED array!!!
+    public static int binarySearch(int[] array, int value) { // array must be SORTED out!!!
         int leftIndex = 0;
         int rightIndex = array.length - 1;
 
@@ -29,5 +29,23 @@ public class Arrays {
             }
         }
         return -1;
+    }
+
+    public static void minSearch(int[] array, int i) {
+        int min = array[i];
+        for (int j = i + 1; j < array.length; j++) {
+            if (min > array[j]) {
+                min = array[j];
+                array[j] = array[i];
+                array[i] = min;
+            }
+        }
+    }
+
+    public static void sortArray(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            minSearch(array, i);
+        }
+        System.out.println(java.util.Arrays.toString(array));
     }
 }
