@@ -1,6 +1,6 @@
-package lesson21.BinarySearchAndSortingArray;
+package lesson22.methodsOfArraysSorting;
 
-public class Arrays {
+public class ArraysSelectedSortMethod {
 
     public static int search(int[] array, int value) {  // линейный поиск элемента
         for (int i = 0; i < array.length; i++) {
@@ -31,21 +31,28 @@ public class Arrays {
         return -1;
     }
 
-    public static void searchMinAndSwap(int[] array, int i) {
-        int min = array[i];
-        for (int j = i + 1; j < array.length; j++) {
-            if (min > array[j]) {
-                min = array[j];
-                array[j] = array[i];
-                array[i] = min;
+    public static void selectedSort(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            int min = searchMin(arr, i, arr.length);
+            if (arr[min] < arr[i]) {
+                swap(arr, i, min);
             }
         }
     }
 
-    public static void sortArray(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            searchMinAndSwap(array, i);
+    public static int searchMin(int[] arr, int iMin, int iMax) {
+        int indexOfMinEl = iMin;
+        for (int i = iMin; i < iMax; i++) {
+            if (arr[i] < arr[indexOfMinEl]) {
+                indexOfMinEl = i;
+            }
         }
-        System.out.println(java.util.Arrays.toString(array));
+        return indexOfMinEl;
+    }
+
+    private static void swap(int[] arr, int i1, int i2) {
+        int temp = arr[i1];
+        arr[i1] = arr[i2];
+        arr[i2] = temp;
     }
 }

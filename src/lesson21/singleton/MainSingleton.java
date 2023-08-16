@@ -18,6 +18,10 @@ public class MainSingleton {
 
 //        Singleton.MESSAGE = "ssdfsaf";  // поменять сообщение нельзя !!! поскольку это константа задана словом final
 
-        Singleton2 que = Singleton2.INSTANCE;
+        Singleton2 instance4 = Singleton2.INSTANCE;
+        Singleton2 instance5 = Singleton2.INSTANCE;
+        instance4.print();
+        instance5.print();
+        System.out.println(Singleton2.MESSAGE);
     }
 }

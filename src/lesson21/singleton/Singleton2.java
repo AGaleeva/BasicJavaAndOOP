@@ -2,7 +2,7 @@ package lesson21.singleton;
 
 public class Singleton2 {
 
-    public final static String MESSAGE = "this is singleton pattern";
+    public final static String MESSAGE = "this is singleton pattern 2";
 
     public static final Singleton2 INSTANCE = new Singleton2();
 
