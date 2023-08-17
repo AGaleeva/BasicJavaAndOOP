@@ -5,6 +5,7 @@ public class Electronics extends Product {
     public Electronics(String title, double price) {
         super(title, price);    }
 
+    @Override
     public void buy() {
         super.buy();
         makeWarranty();

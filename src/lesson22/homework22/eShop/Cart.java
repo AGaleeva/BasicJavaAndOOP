@@ -74,4 +74,10 @@ public class Cart {
         }
         return sum;
     }
+
+    public void placeOrder() {
+        for (int i = 0; i < size; i++) {
+            arr[i].buy();
+        }
+    }
 }

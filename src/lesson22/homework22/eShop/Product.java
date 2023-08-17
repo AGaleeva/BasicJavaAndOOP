@@ -21,6 +21,7 @@ public class Product {
     public void buy() {
         System.out.println("Your order contain: " + title);
         System.out.println("The standart delivery time is 72 hours.");
+        System.out.println();
     }
 
 
