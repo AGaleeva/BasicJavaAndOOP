@@ -35,7 +35,7 @@ public class Main {
 //        cart.addProduct(new Electronics("Filter Coffee Maker Machine ", 24.9));
 
 
-        Clothes socks = new Clothes(new Product("socks, 6 pair, size 35-38", 7.5));
+        Clothes socks = new Clothes(new Product("socks, 6 pair", 7.5), 100, "size 35-38", 6);
 
         System.out.println(socks);
         System.out.println("=============================================");

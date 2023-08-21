@@ -8,9 +8,17 @@ package lesson23.association;
 
 public class Clothes  {
     private Product product;
+    private int id;
+    private String size;
+    private int packQty;
 
-    public Clothes (Product product) {
+
+
+    public Clothes (Product product, int id, String size, int packQty) {
         this.product = product;
+        this.id = id;
+        this.size = size;
+        this.packQty = packQty;
     }
 
 
@@ -18,8 +26,13 @@ public class Clothes  {
         product.buy();
     }
 
+    @Override
     public String toString() {
-        return product.toString();
+        return "Clothes (" +
+                "product=" + product +
+                ", id=" + id +
+                ", size='" + size + '\'' +
+                ", packQty=" + packQty +
+                ')';
     }
-
 }
