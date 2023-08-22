@@ -1,10 +1,11 @@
-package lesson25.user.model;
-public class User {
+package lesson26.homework26;
+
+public class UserEmailAndPasswordAsCharArrays {
     private String email;
     private String password;
 
-    public User(String email, String password) {
-        setEmail(email);                        // вставляем проверку уже в конструктор через сеттер (в котором проверка написана)
+    public UserEmailAndPasswordAsCharArrays (String email, String password) {
+        setEmail(email);
         setPassword(password);
     }
 
@@ -37,32 +38,35 @@ public class User {
     4) alphabetic, digits, '@', '.', '_', '-'
     */
     private boolean emailIsValid(String email) {
-
-
-        int at = email.indexOf('@');
-        if (at == -1 || (email.indexOf('@', at + 1) >= 0)) {
-            return false;
-        }
-//        if (email.lastIndexOf('@') != at) { //  это такой же метод, как и выше, но с методом lastIndexOf
-        // если один индекс не равен другому индексу:
-        // у нас минимум два символа '@', т.е. мэйл не валиден
-//            return false;
-//        }
-        if (email.indexOf('.', at + 1) == -1) return false;
-
-        if (email.lastIndexOf('.') >= email.length() - 2) return false;
-        for (int i = 0; i < email.length(); i++) {
-            char c = email.charAt(i);
-//            if (c >= '0' && c <= '9') return false; // проверяем, не цифра ли это по таблице ASCII
+        String[] arr = email.split("");
+        boolean at = false;
+        boolean dot = false;
+        for (int i = 0; i < arr.length; i++) {
+            char c = arr[i].charAt(0);
             if (!(Character.isDigit(c) || Character.isAlphabetic(c) || c == '@' || c == '.' || c == '_' || c == '-'))
                 return false;
+            if (c == '@') {
+                if (at) {
+                    return false;
+                }
+                at = true;
+            }
+            if (c == '.') {
+                if (!at) {
+                    return false;
+                }
+                dot = true;
+            }
+        }
+        if (!dot) {
+            return false;
+        }
+
+        if (arr[arr.length - 1].charAt(0) == '.' || arr[arr.length - 2].charAt(0) == '.') {
+            return false;
         }
         return true;
     }
-   /* private String trimmedEmailAddress(String email) {
-        email = email.trim().toLowerCase();
-        return email;
-    }*/
 
     public String getPassword () {
         return password;
@@ -77,7 +81,8 @@ public class User {
     }
 
     private boolean passwordIsValid (String password){
-        if (password.length() < 8) {
+        String[] arrPswd = password.split("");
+        if (arrPswd.length < 8) {
             return false;
         }
         boolean uppCase = false;
@@ -85,8 +90,8 @@ public class User {
         boolean digit = false;
         boolean specSymbol = false;
 
-        for (int i = 0; i < password.length(); i++) {
-            char c = password.charAt(i);
+        for (int i = 0; i < arrPswd.length; i++) {
+            char c = arrPswd[i].charAt(0);
             if (Character.isUpperCase(c)) {
                 uppCase = true;
             }
@@ -112,4 +117,3 @@ public class User {
                 '}';
     }
 }
-
