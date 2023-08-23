@@ -23,29 +23,33 @@ class UserEmailAndPasswordAsCharArraysTest {
         user.setEmail(validEmail);
         assertEquals(validEmail, user.getEmail());
 
+        validEmail = " john@gmx.de ";
+        user.setEmail(validEmail);
+        assertEquals("john@gmx.de", user.getEmail());
+
         String invalidEmail = "john.gmx.de";
         user.setEmail(invalidEmail);
-        assertEquals(validEmail, user.getEmail());
+        assertEquals(validEmail.trim(), user.getEmail());
 
         invalidEmail = "jo@hn@gmx.de";
         user.setEmail(invalidEmail);
-        assertEquals(validEmail, user.getEmail());
+        assertEquals(validEmail.trim(), user.getEmail());
 
         invalidEmail = "john@gmxde";
         user.setEmail(invalidEmail);
-        assertEquals(validEmail, user.getEmail());
+        assertEquals(validEmail.trim(), user.getEmail());
 
         invalidEmail = "john@gmxde.";
         user.setEmail(invalidEmail);
-        assertEquals(validEmail, user.getEmail());
+        assertEquals(validEmail.trim(), user.getEmail());
 
         invalidEmail = "john@gmxd.e";
         user.setEmail(invalidEmail);
-        assertEquals(validEmail, user.getEmail());
+        assertEquals(validEmail.trim(), user.getEmail());
 
         invalidEmail = "jo!hn@gmxde";
         user.setEmail(invalidEmail);
-        assertEquals(validEmail, user.getEmail());
+        assertEquals(validEmail.trim(), user.getEmail());
     }
 
     @Test
