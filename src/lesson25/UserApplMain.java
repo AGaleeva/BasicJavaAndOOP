@@ -1,4 +1,4 @@
-package lesson25.user;
+package lesson25;
 
 import lesson25.user.model.User;
 

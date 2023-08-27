@@ -1,6 +1,5 @@
 package lesson26.homework26.test;
 
-import lesson25.user.model.User;
 import lesson26.homework26.UserEmailAndPasswordAsCharArrays;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

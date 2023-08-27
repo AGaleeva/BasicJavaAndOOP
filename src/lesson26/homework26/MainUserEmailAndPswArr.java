@@ -1,7 +1,5 @@
 package lesson26.homework26;
 
-import lesson25.user.model.User;
-
 public class MainUserEmailAndPswArr {
     public static void main(String[] args) {
 
