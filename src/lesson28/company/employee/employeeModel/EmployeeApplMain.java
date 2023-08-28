@@ -1,10 +1,5 @@
 package lesson28.company.employee.employeeModel;
 
-import lesson28.company.employee.employeeModel.Employee;
-import lesson28.company.employee.employeeModel.Manager;
-import lesson28.company.employee.employeeModel.SalesManager;
-import lesson28.company.employee.employeeModel.WageEmployee;
-
 public class EmployeeApplMain {
     public static void main(String[] args) {
 

@@ -18,6 +18,6 @@ public interface Company {
     double totalSales();
 
     void printEmployees();
-
-    int quantityByLastName (String lastName);
+    Employee[] findEmployeesHoursGreeterThan(int hours);
+    Employee[] findEnployeesSalaryRange(int minSalary, int maxSalary);
 }

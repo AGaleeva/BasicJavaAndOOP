@@ -32,8 +32,8 @@ public class SalesManager extends Employee {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder(super.toString());
-        sb.append(", salary=").append(calcSalary());
+        final StringBuffer sb = new StringBuffer("SalesManager{");
+        sb.append(" , salara =").append(calcSalary());
         return sb.toString();
     }
 }

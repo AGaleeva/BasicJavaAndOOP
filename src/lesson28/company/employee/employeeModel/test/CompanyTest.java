@@ -41,41 +41,39 @@ class CompanyTest {
 
     @Test
     void removeEmployee() {
-        Employee removedEmployee = company.removeEmployee(2000);
-        assertNotNull(removedEmployee);
-        assertEquals(employees[1], removedEmployee);
+        Employee employee = company.removeEmployee(3000);
+        assertEquals(employees[2], employee);
         assertEquals(3, company.quantity());
+        assertNull(company.removeEmployee(3000)); // вызов метода второй раз (чтобы попытаться уволить второй раз), поэтому не переменная, а метод
     }
 
     @Test
     void findEmployee() {
-        Employee foundEmployee = company.findEmployee(3000);
-        assertNotNull(foundEmployee);
-        assertEquals(employees[2], foundEmployee);
+        Employee employee = company.findEmployee(2000);
+        assertEquals(employees[1], employee);
+        employee = company.findEmployee(5000);
+        assertNull(employee); //   assertNull(company.findEmployee(5000)); - more short notation
     }
 
     @Test
     void quantity() {
-        Employee employee = new SalesManager(5000, "Rabindranate", "Anand", 80, 30000, 0.1);
-        company.addEmployee(employee);
-        assertEquals(5, company.quantity());
-        company.removeEmployee(5000);
-        assertEquals(4,company.quantity());
+        assertEquals(4, company.quantity());
+
     }
 
     @Test
     void totalSalary() {
-        assertEquals(11200.0, company.totalSalary());
+        assertEquals(11200.0, company.totalSalary(), 0.01);
     }
 
     @Test
     void avgSalary() {
-        assertEquals(2800.0, company.avgSalary());
+        assertEquals(2800.0, company.avgSalary(), 0.01);
     }
 
     @Test
     void totalSales() {
-        assertEquals(50000, company.totalSales());
+        assertEquals(50_000.0, company.totalSales(), 0.01);
     }
 
     @Test
@@ -84,8 +82,15 @@ class CompanyTest {
     }
 
     @Test
-    void quantityByLastName() {
-        assertEquals(0, company.quantityByLastName("Doe"));
-        assertEquals(1, company.quantityByLastName("Smith"));
+    void findEmployeesHoursGreeterThan() {
+        Employee[] actual = company.findEmployeesHoursGreeterThan(100);
+        Employee[] expected = {employees[0], employees[1], employees[2]};
+        assertArrayEquals(expected, actual);
+    }
+    @Test
+    void findEnployeesSalaryRange() {
+        Employee[] actul = company.findEnployeesSalaryRange(2000, 2500);
+        Employee[] expected = {employees[1], employees[2]};
+        assertArrayEquals(expected, actul);
     }
 }
