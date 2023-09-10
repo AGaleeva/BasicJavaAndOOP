@@ -1,6 +1,5 @@
 package lesson30.homeWork.cars.dao;
 
-import lesson28.company.employeeModel.Cars;
 import lesson30.homeWork.cars.model.Car;
 
 public class GarageImpl implements Garage {
@@ -16,15 +15,16 @@ public class GarageImpl implements Garage {
         if (car == null || cars.length == size || findCarByRegNumber(car.getRegNumber()) != null) {
             return false;
         }
-        cars[size] = car;
-        size++;
+//        cars[size] = car;
+//        size++;
+        cars[size++] = car;
         return true;
     }
 
     @Override
     public Car removeCar(String regNumber) {
         for (int i = 0; i < size; i++) {
-            if (cars[i].getRegNumber().equals(regNumber)) {
+            if (cars[i].getRegNumber().equals(regNumber)) { // regNumbrer.equals(cars[i].getRegNumber())
                 Car removed = cars[i];
                 cars[i] = cars[size - 1];
                 cars[size - 1] = null;
@@ -38,7 +38,7 @@ public class GarageImpl implements Garage {
     @Override
     public Car findCarByRegNumber(String regNumber) {
         for (int i = 0; i < size; i++) {
-            if (cars[i].getRegNumber() == regNumber) {
+            if (cars[i].getRegNumber().equals(regNumber)) {
                 return cars[i];
             }
         }
@@ -49,13 +49,13 @@ public class GarageImpl implements Garage {
     public Car[] findCarsByModel(String model) {
         int count = 0;
         for (int i = 0; i < size; i++) {
-            if (cars[i].getModel().equals(model)) {
+            if (model.equals(cars[i].getModel())) {
                 count++;
             }
         }
         Car[] res = new Car[count];
         for (int i = 0, j = 0; j < res.length; i++) {
-            if (cars[i].getModel().equals(model)) {
+            if (model.equals(cars[i].getModel())) {
                 res[j] = cars[i];
                 j++;
             }
@@ -67,13 +67,13 @@ public class GarageImpl implements Garage {
     public Car[] findCarsByBrand(String brand) {
         int count = 0;
         for (int i = 0; i < size; i++) {
-            if (cars[i].getBrand().equals(brand)) {
+            if (brand.equals(cars[i].getBrand())) {
                 count++;
             }
         }
         Car[] res = new Car[count];
         for (int i = 0, j = 0; j < res.length; i++) {
-            if (cars[i].getBrand().equals(brand)) {
+            if (brand.equals(cars[i].getBrand())) {
                 res[j] = cars[i];
                 j++;
             }
@@ -103,13 +103,13 @@ public class GarageImpl implements Garage {
     public Car[] findCarsByColor(String color) {
         int count = 0;
         for (int i = 0; i < size; i++) {
-            if (cars[i].getColor().equals(color)) {
+            if (color.equals(cars[i].getColor())) {
                 count++;
             }
         }
         Car[] res = new Car[count];
         for (int i = 0, j = 0; j < res.length; i++) {
-            if (cars[i].getColor().equals(color)) {
+            if (color.equals(cars[i].getColor())) {
                 res[j] = cars[i];
                 j++;
             }

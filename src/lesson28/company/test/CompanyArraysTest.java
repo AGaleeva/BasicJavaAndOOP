@@ -1,23 +1,24 @@
-package lesson28.company.employee.employeeModel.test;
+package lesson28.company.test;
 
-import lesson28.company.employee.employeeModel.Employee;
-import lesson28.company.employee.employeeModel.Manager;
-import lesson28.company.employee.employeeModel.SalesManager;
-import lesson28.company.employee.employeeModel.WageEmployee;
-import lesson28.company.employee.employeeModel.dao.Company;
-import lesson28.company.employee.employeeModel.dao.CompanyImpl;
+import lesson28.company.dao.Company;
+import lesson28.company.dao.CompanyArraysImpl;
+import lesson28.company.employeeModel.Employee;
+import lesson28.company.employeeModel.Manager;
+import lesson28.company.employeeModel.SalesManager;
+import lesson28.company.employeeModel.WageEmployee;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
-class CompanyTest {
+public class CompanyArraysTest {
     Company company;
     Employee[] employees;
 
     @BeforeEach
     void setUp() {
-        company = new CompanyImpl(5);
+        company = new CompanyArraysImpl(5);
         employees = new Employee[4];
         employees[0] = new Manager(1000, "John", "Smith", 160, 3000, 5);
         employees[1] = new WageEmployee(2000, "Mary", "Smith", 160, 15);
@@ -25,6 +26,13 @@ class CompanyTest {
         employees[3] = new SalesManager(4000, "Rabindranate", "Anand", 80, 30000, 0.1);
         for (int i = 0; i < employees.length; i++) {
             company.addEmployee(employees[i]);
+        }
+    }
+
+    private void printArray(Object[] arr, String title) {
+        System.out.println("============== " + title + "==============");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
         }
     }
 
@@ -86,6 +94,7 @@ class CompanyTest {
         Employee[] actual = company.findEmployeesHoursGreeterThan(100);
         Employee[] expected = {employees[0], employees[1], employees[2]};
         assertArrayEquals(expected, actual);
+
     }
     @Test
     void findEnployeesSalaryRange() {

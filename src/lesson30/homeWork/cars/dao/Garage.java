@@ -10,5 +10,4 @@ public interface Garage {
     Car[] findCarsByBrand(String brand);
     Car[] findCarsByEngine(double minEngine, double maxEngine);
     Car[] findCarsByColor(String color);
-
 }

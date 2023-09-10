@@ -1,6 +1,6 @@
-package lesson28.company.employee.employeeModel.dao;
+package lesson28.company.dao;
 
-import lesson28.company.employee.employeeModel.Employee;
+import lesson28.company.employeeModel.Employee;
 
 public interface Company {
     boolean addEmployee(Employee employee);

@@ -1,4 +1,4 @@
-package lesson28.company.employee.employeeModel;
+package lesson28.company.employeeModel;
 
 public abstract class Employee {
     protected final int id;

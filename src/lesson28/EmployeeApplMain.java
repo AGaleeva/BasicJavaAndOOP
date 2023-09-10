@@ -1,11 +1,14 @@
-package lesson28.company.employee.employeeModel;
+package lesson28;
+
+import lesson28.company.employeeModel.Employee;
+import lesson28.company.employeeModel.Manager;
 
 public class EmployeeApplMain {
     public static void main(String[] args) {
 
-        Employee empl1  = new Manager(1000, "John", "Smith", 160, 3000, 5);
+        Employee empl1 = new Manager(1000, "John", "Smith", 160, 3000, 5);
         Employee empl2 = empl1;
-        Employee empl3  = new Manager(1000, "John", "Smith", 160, 3000, 5);
+        Employee empl3 = new Manager(1000, "John", "Smith", 160, 3000, 5);
         boolean check = empl1 == empl2;
         System.out.println(check);
         check = empl1 == empl3;
@@ -18,3 +21,4 @@ public class EmployeeApplMain {
         System.out.println(check);
     }
 }
+

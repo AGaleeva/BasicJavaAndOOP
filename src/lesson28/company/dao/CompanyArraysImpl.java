@@ -1,14 +1,17 @@
-package lesson28.company.employee.employeeModel.dao;
+package lesson28.company.dao;
 
-import lesson28.company.employee.employeeModel.Employee;
-import lesson28.company.employee.employeeModel.SalesManager;
+import lesson28.company.employeeModel.Employee;
+import lesson28.company.employeeModel.SalesManager;
 
-public class CompanyImpl implements Company {
+import java.util.Arrays;
+import java.util.function.Predicate;
+
+public class CompanyArraysImpl implements Company {
 
     private Employee[] employees;
     private int size; // текущее кол-во сотрудников
 
-    public CompanyImpl(int capacity) {
+    public CompanyArraysImpl(int capacity) {
         employees = new Employee[capacity];
     }
     @Override
@@ -26,9 +29,8 @@ public class CompanyImpl implements Company {
         for (int i = 0; i < size; i++) {
             if (employees[i].getId() == id) {
                 Employee victim = employees[i];
-                employees[i] = employees[size - 1]; // здесь мы не сохраняем порядок добавления в массиве, поэтому просто ставим последнего на место удаляемого
-                employees[size - 1] = null;
-                size--;
+                System.arraycopy(employees, i + 1, employees, i, size - i - 1);
+                employees[--size] = null;
                 return victim;
             }
         }
@@ -84,37 +86,33 @@ public class CompanyImpl implements Company {
 
     @Override
     public Employee[] findEmployeesHoursGreeterThan(int hours) {
-        int count = 0;
-        for (int i = 0; i < size; i++) {
-            if (employees[i].getHours() >= hours) {
-                count++;
-            }
-        }
-        Employee[] res = new Employee[count];
-        for (int i = 0, j = 0; j < res.length; i++) {
-            if (employees[i].getHours() >= hours) {
-                res[j] = employees[i];
-                j++;
-            }
-        }
-        return res;
+        Predicate<Employee> predicate = e -> e.getHours() >= hours; // e = employee
+        return findEmployeesByPredicate(predicate);
     }
+
 
     @Override
     public Employee[] findEnployeesSalaryRange(int minSalary, int maxSalary) {
-        int count = 0;
-        for (int i = 0; i < size; i++) {
-            if (employees[i].calcSalary() >= minSalary && employees[i].calcSalary() < maxSalary) {
-                count++;
+        Predicate<Employee> predicate = new Predicate<Employee>() {
+            @Override
+            public boolean test(Employee employee) {
+                return employee.calcSalary() >= minSalary && employee.calcSalary() < maxSalary;
             }
-        }
-        Employee[] res = new Employee[count];
-        for (int i = 0, j = 0; j < res.length; i++) {
-            if (employees[i].calcSalary() >= minSalary && employees[i].calcSalary() < maxSalary) {
-                res[j] = employees[i];
+        };
+        return findEmployeesByPredicate(predicate);
+    }
+
+
+    private Employee[] findEmployeesByPredicate(Predicate<Employee> predicate) {
+        int j = 0;
+        Employee[] res = new Employee[size];
+        for (int i = 0; i < res.length; i++) {
+            if (predicate.test(employees[i])) {
+                System.arraycopy(employees, i, res, j, 1);
                 j++;
             }
         }
+        res = Arrays.copyOf(res, j);
         return res;
     }
 }

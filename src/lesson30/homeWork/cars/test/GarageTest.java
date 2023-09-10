@@ -1,6 +1,5 @@
 package lesson30.homeWork.cars.test;
 
-import lesson28.company.employeeModel.Cars;
 import lesson30.homeWork.cars.dao.Garage;
 import lesson30.homeWork.cars.dao.GarageImpl;
 import lesson30.homeWork.cars.model.Car;
